@@ -9,15 +9,15 @@
 #import "NSMutableAttributedString+AKAttributedString.h"
 
 @implementation NSMutableAttributedString (AKAttributedString)
-- (NSMutableAttributedString * (^)(UIFont *))font{
-    return ^id(UIFont *font){
+- (NSMutableAttributedString * (^)(UIFont *))font {
+    return ^id(UIFont *font) {
         [self addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, self.length)];
         return self;
     };
 }
 
-- (NSMutableAttributedString * (^)(UIFont *, NSRange))rangeFont{
-    return ^id(UIFont *font, NSRange range){
+- (NSMutableAttributedString * (^)(UIFont *, NSRange))rangeFont {
+    return ^id(UIFont *font, NSRange range) {
         [self addAttribute:NSFontAttributeName value:font range:range];
         return self;
     };
